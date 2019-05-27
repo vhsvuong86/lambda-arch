@@ -28,7 +28,7 @@ services:
       depends_on:
         - zookeeper
       environment:
-        KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://10.11.50.138:9092
+        KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://10.0.2.15:9092 #FIXME - put your IP address machine - get IP machine via ifconfig command
         KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
         KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       volumes:
@@ -44,7 +44,7 @@ services:
     hostname: cassandra
     networks:
       net:
-        ipv4_address: 172.22.0.6
+        ipv4_address: 172.18.0.9 #FIXME - change to IP address in the docker network
     ports:
       - "9042:9042"
     environment:
